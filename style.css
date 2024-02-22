@@ -41,14 +41,34 @@ h3 {
   width: 90%;
 }
 
-.progress {
+/* .progress {
   background: #242323;
   border-radius: 5px;
   height: 100%;
-  width: 12%;
+  width: 0%;
+  transition: width 0.1s linear;
+} */
+
+.progress {
+  background: #242323;
+  border-radius: 5px;
+  height: 6px; /* Adjust height as needed */
+  width: 0%;
+  position: relative; /* Position relative for absolute positioning of circle */
   transition: width 0.1s linear;
 }
 
+.progress::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0; /* Place circle at the right end of the progress bar */
+  width: 9px; /* Diameter of the circle */
+  height: 9px; /* Diameter of the circle */
+  border-radius: 50%; /* To make it a circle */
+  background: #8d8a8a; /* Circle color */
+  box-shadow: #242323 1px rgba(0, 0, 0, 0.4);
+}
 .duration-container {
   position: relative;
   top: -25px;
